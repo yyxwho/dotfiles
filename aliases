@@ -1,0 +1,12 @@
+alias ls="ls --color=auto"
+alias grep="grep --color=auto"
+
+alias myalias="vim ~/.dotfiles/aliases"
+alias myenv="vim ~/.dotfiles/zshenv"
+alias myssh="vim ~/.ssh/config"
+
+alias mysrc="cd ~/Developer/sources"
+alias myrepo="cd ~/Developer/repositories"
+alias myproj="cd ~/Developer/projects"
+
+alias didi="cd ~/DIDI"

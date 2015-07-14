@@ -1,0 +1,5 @@
+Host benz
+  HostName 192.168.123.211
+  #Port 端口
+  User wanghua
+  #IdentityFile 密钥文件的路径

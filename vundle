@@ -1,0 +1,56 @@
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'fatih/molokai'
+
+Plugin 'airblade/vim-gitgutter'
+Plugin 'fugitive.vim'
+Plugin 'gitv'
+
+Plugin 'scrooloose/nerdTree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'jistr/vim-nerdtree-tabs'
+
+Plugin 'Tagbar'
+
+Plugin 'Shougo/neocomplete'
+Plugin 'SuperTab'
+Plugin 'Auto-Pairs'
+
+Plugin 'scrooloose/syntastic'
+
+
+Plugin 'bling/vim-airline'
+
+Plugin 'fatih/vim-go'
+
+call vundle#end() 
+
+colorscheme molokai
+
+" auto open TagBar 
+autocmd vimenter * Tagbar
+
+" auto open NERDTree
+autocmd vimenter * NERDTree
+
+" autoload NERDTree if no file open
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" NERDTree shortcut
+map <C-n> :NERDTreeToggle<CR>
+
+" exit vim if only NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" Tagbar shortcut
+nmap <F8> :TagbarToggle<CR>
+
+" gitgutter
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0

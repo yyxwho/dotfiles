@@ -1,5 +1,6 @@
 alias ls="ls --color=auto"
 alias grep="grep --color=auto"
+alias vimgo='vim -u ~/.vimrc.go'
 
 alias myalias="vim ~/.dotfiles/aliases"
 alias myenv="vim ~/.dotfiles/zshenv"
@@ -8,5 +9,6 @@ alias myssh="vim ~/.ssh/config"
 alias mysrc="cd ~/Developer/sources"
 alias myrepo="cd ~/Developer/repositories"
 alias myproj="cd ~/Developer/projects"
+alias mygo="cd ~/Developer/go"
 
 alias didi="cd ~/DIDI"

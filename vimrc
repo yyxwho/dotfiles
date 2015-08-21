@@ -1,3 +1,7 @@
+if filereadable($HOME . "/.vundle")
+      source ~/.vundle
+endif
+
 " Leader
 let mapleader = " "
 
@@ -102,3 +106,4 @@ augroup vimrcEx
   autocmd FileType gitcommit setlocal textwidth=72
   autocmd FileType gitcommit setlocal spell
 augroup END
+

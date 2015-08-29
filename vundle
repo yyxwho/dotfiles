@@ -37,6 +37,8 @@ autocmd vimenter * Tagbar
 
 " auto open NERDTree
 autocmd vimenter * NERDTree
+wincmd w
+autocmd VimEnter * wincmd w
 
 " autoload NERDTree if no file open
 autocmd StdinReadPre * let s:std_in=1

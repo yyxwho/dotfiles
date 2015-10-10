@@ -1,58 +1,72 @@
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
+
+" ============== plugin list
+
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'fatih/molokai'
-
+" git 
 Plugin 'airblade/vim-gitgutter'
 Plugin 'fugitive.vim'
 Plugin 'gitv'
 
+" fs-explorer
 Plugin 'scrooloose/nerdTree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'nerdtree-ack'
 
+" tag
 Plugin 'Tagbar'
 
-Plugin 'Shougo/neocomplete'
-Plugin 'SuperTab'
-Plugin 'Auto-Pairs'
+" Plugin 'Shougo/neocomplete'
+" Plugin 'SuperTab'
+" Plugin 'Auto-Pairs'
 
+" apparence&improvement
+Plugin 'fatih/molokai'
 Plugin 'scrooloose/syntastic'
-
-
+Plugin 'EasyMotion'
 Plugin 'bling/vim-airline'
 
+" golang
 Plugin 'fatih/vim-go'
 
 call vundle#end() 
 
+" ============== config for plugins
+
 colorscheme molokai
 
 " auto open TagBar 
-autocmd vimenter * Tagbar
+"autocmd vimenter * Tagbar
 
 " auto open NERDTree
-autocmd vimenter * NERDTree
-wincmd w
-autocmd VimEnter * wincmd w
+"autocmd vimenter * NERDTree
+"wincmd w
+"autocmd VimEnter * wincmd w
 
 " autoload NERDTree if no file open
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-" NERDTree shortcut
-map <C-n> :NERDTreeToggle<CR>
-
 " exit vim if only NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
+" NERDTree shortcut
+map <F2> :NERDTreeToggle<CR>
 " Tagbar shortcut
 nmap <F8> :TagbarToggle<CR>
 
 " gitgutter
 let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
+
+" configure syntastic syntax checking to check on open as well as save
+let g:syntastic_check_on_open=1
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
+
+" vim: filetype=vim

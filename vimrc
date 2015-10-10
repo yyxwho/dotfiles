@@ -23,7 +23,7 @@ filetype plugin indent on
 set tabstop=4
 set shiftwidth=4
 set shiftround
-set expandtab
+"set expandtab
 
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
@@ -36,10 +36,6 @@ set colorcolumn=+1
 set number
 set numberwidth=5
 
-" configure syntastic syntax checking to check on open as well as save
-let g:syntastic_check_on_open=1
-let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
-
 " Always use vertical diffs
 set diffopt+=vertical
 
@@ -47,23 +43,9 @@ if &compatible
   set nocompatible
 end
 
-" Tab completion
-" will insert tab at beginning of line,
-" will use completion if not at beginning
-set wildmode=list:longest,list:full
-function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
-endfunction
-inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
-inoremap <S-Tab> <c-n>
-
-" Exclude Javascript files in :Rtags via rails.vim due to warnings when parsing
-let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
 
 " Index ctags from any project, including those outside Rails
 map <Leader>ct :!ctags -R .<CR>
@@ -71,18 +53,8 @@ map <Leader>ct :!ctags -R .<CR>
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
 
-" Get off my lawn
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
-
 " Run commands that require an interactive shell
 nnoremap <Leader>r :RunInInteractiveShell<space>
-
-" Open new split panes to right and bottom, which feels more natural
-set splitbelow
-set splitright
 
 " Quicker window movement
 nnoremap <C-j> <C-w>j
@@ -92,8 +64,7 @@ nnoremap <C-l> <C-w>l
 
 augroup vimrcEx
  autocmd!
-
-  " When editing a file, always jump to the last known cursor position.
+  " When editing a file, always jump to the last known ckrsor position.
   " Don't do it for commit messages, when the position is invalid, or when
   " inside an event handler (happens when dropping a file on gvim).
   autocmd BufReadPost *

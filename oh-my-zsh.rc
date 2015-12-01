@@ -7,8 +7,11 @@ export ZSH=~/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME="gnoster"
-#ZSH_THEME="muse"
-ZSH_THEME="bira"
+if [ `uname` = "Darwin" ]; then
+	ZSH_THEME="muse"
+else
+	ZSH_THEME="bira"
+fi
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"

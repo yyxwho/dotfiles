@@ -13,6 +13,10 @@ export MY_GO="$MY_DBASE/go"
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
+# PAGER
+export PAGER="/usr/local/bin/most"
+export EDITOR="/usr/local/bin/vim"
+
 # GO
 export GOROOT="/usr/local/opt/go/libexec"
 export PATH=$PATH:$GOROOT/bin

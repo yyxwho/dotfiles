@@ -1,7 +1,7 @@
 Host centos6
-  HostName 172.16.99.6
+  HostName 192.168.199.216
   #Port 端口
   #User wanghua
   #IdentityFile 密钥文件的路径
 Host centos7
-  HostName 172.16.99.7
+  HostName 192.168.199.217

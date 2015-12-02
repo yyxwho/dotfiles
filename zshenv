@@ -13,13 +13,18 @@ export MY_GO="$MY_DBASE/go"
 export MY_PWORK="$MY_DBASE/primary_work"
 export MY_PREPO="$MY_PWORK/repositories"
 
+[[ -f /usr/bin/most ]]  && export PAGER="/usr/bin/most"
+[[ -f /usr/bin/vim ]]  && export EDITOR="/usr/bin/vim"
+
+[[ -f /usr/local/bin/most ]]  && export PAGER="/usr/local/bin/most"
+[[ -f /usr/local/bin/vim ]]  && export EDITOR="/usr/local/bin/vim"
+
 if [ `uname` = "Darwin" ]; then
 	# GNU Toolkit
 	export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 	export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 	# PAGER
-	[[ -f /usr/local/bin/most ]] && export PAGER="/usr/local/bin/most"
 	[[ -f /usr/local/bin/vim ]]  && export EDITOR="/usr/local/bin/vim"
 
 	# GO

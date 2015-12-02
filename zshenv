@@ -1,6 +1,5 @@
 #!/usr/bin/env zsh
-# homebrew
-export PATH="/usr/local/sbin:$PATH"
+export PATH="$HOME/.bin:/usr/local/sbin:$PATH"
 
 # Some private directory
 export MY_DBASE="$HOME/Developer"
@@ -13,10 +12,13 @@ export MY_GO="$MY_DBASE/go"
 export MY_PWORK="$MY_DBASE/primary_work"
 export MY_PREPO="$MY_PWORK/repositories"
 
+# most for  colorful man  
+# 	http://www.cyberciti.biz/faq/unix-linux-color-man-pages-configuration/
+# 	http://www.jedsoft.org/most/
 [[ -f /usr/bin/most ]]  && export PAGER="/usr/bin/most"
-[[ -f /usr/bin/vim ]]  && export EDITOR="/usr/bin/vim"
-
 [[ -f /usr/local/bin/most ]]  && export PAGER="/usr/local/bin/most"
+
+[[ -f /usr/bin/vim ]]  && export EDITOR="/usr/bin/vim"
 [[ -f /usr/local/bin/vim ]]  && export EDITOR="/usr/local/bin/vim"
 
 if [ `uname` = "Darwin" ]; then
@@ -39,6 +41,8 @@ if [ `uname` = "Darwin" ]; then
 	export CLASSPATH=.:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib
 
 	# GRADLE
-	export GRADLE_HOME="/usr/local/opt/gradle/libexec/"
+	export GRADLE_HOME="/usr/local/opt/gradle/libexec"
 	export PATH=$PATH:$GRADLE_HOME/bin
 fi
+
+export MY_ENV="done"

@@ -8,6 +8,8 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
+" ident line
+Plugin 'Yggdroot/indentLine'
 " git 
 Plugin 'airblade/vim-gitgutter'
 Plugin 'fugitive.vim'
@@ -59,7 +61,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " NERDTree shortcut
 map <F2> :NERDTreeToggle<CR>
 " Tagbar shortcut
-nmap <F8> :TagbarToggle<CR>
+nmap <F3> :TagbarToggle<CR>
 
 " gitgutter
 let g:gitgutter_realtime = 0

@@ -2,35 +2,47 @@ if filereadable($HOME . "/.vundle")
       source ~/.vundle
 endif
 
+" File Encoding
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 set termencoding=utf-8
 set encoding=utf-8
 
-" Leader
+" Keyboard Shortcut Leader
 let mapleader = " "
 
-set backspace=2   " Backspace deletes like most programs in insert mode
+set backspace=2             " Backspace deletes like most programs in insert mode
 set nobackup
 set nowritebackup
 set noswapfile
 set history=50
-set ruler         " show the cursor position all the time
-set showcmd       " display incomplete commands
-set incsearch     " do incremental searching
-set laststatus=2  " Always display the status line
-set autowrite     " Automatically :write before running commands
+set ruler                   " show the cursor position all the time
+set showcmd                 " display incomplete commands
+set incsearch               " do incremental searching
+set laststatus=2            " Always display the status line
+set autowrite               " Automatically :write before running commands
 
-syntax on
-filetype plugin indent on
+filetype plugin indent on   " Automatically detect file types.
+syntax on                   " Syntax highlighting
 
 " Softtabs, 4 spaces
+set cindent
+set modeline
 set tabstop=4
 set shiftwidth=4
 set shiftround
-"set expandtab
+set expandtab
 
 " Display extra whitespace
-set list listchars=tab:»·,trail:·,nbsp:·
+set list
+"set listchars=tab:»·,trail:·,nbsp:·
+"set listchars=tab:▸\ ,eol:¬,trail:·,nbsp:·
+set listchars=tab:▸\ ,trail:·,nbsp:·
+
+" Folder
+set foldmarker={,}
+set foldlevel=0
+set foldmethod=marker
+
 
 " Make it obvious where 80 characters is
 set textwidth=80
@@ -46,6 +58,9 @@ set diffopt+=vertical
 if &compatible
   set nocompatible
 end
+
+set pastetoggle=<F12>
+map <leader>p "*p
 
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow

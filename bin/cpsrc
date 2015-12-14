@@ -1,0 +1,2 @@
+#!/bin/sh
+scp $MY_SRC/$1 $2:~/Developer/sources/

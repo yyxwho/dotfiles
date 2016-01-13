@@ -41,6 +41,9 @@ call vundle#end()
 
 " ============== config for plugins
 
+let g:airline_powerline_fonts = 1
+set t_Co=256
+
 colorscheme molokai
 
 " auto open TagBar 

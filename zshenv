@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-export PATH="$HOME/.bin:/usr/local/sbin:$PATH"
+export PATH="$HOME/.bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
 # Some private directory
 export MY_DBASE="$HOME/Developer"
@@ -31,11 +31,9 @@ if [ `uname` = "Darwin" ]; then
 
 	# GO
 	export GOROOT="/usr/local/opt/go/libexec"
-	export PATH=$PATH:$GOROOT/bin
-	export GOPATH="$MY_DBASE/go"
-	export PATH=$PATH:$GOPATH/bin
+    export PATH=$PATH:$GOROOT/bin
 
-	# JAVA
+		# JAVA
 	export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home"
 	export PATH=$JAVA_HOME/bin:$PATH
 	export CLASSPATH=.:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib
@@ -44,5 +42,12 @@ if [ `uname` = "Darwin" ]; then
 	export GRADLE_HOME="/usr/local/opt/gradle/libexec"
 	export PATH=$PATH:$GRADLE_HOME/bin
 fi
+
+if [ `uname` = "Linux" ]; then
+    [[ -f /usr/local/go/bin/go ]]  && export PATH=/usr/local/go/bin:$PATH
+fi
+
+export GOPATH="$MY_DBASE/go"
+export PATH=$PATH:$GOPATH/bin
 
 export MY_ENV="done"

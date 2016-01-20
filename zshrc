@@ -18,6 +18,6 @@ if [ -n $MY_RC ]; then
 		[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 	fi
 	
-	[[ -f ~/.zshrc.local ]] && . ~/.zhsrc.local
+	[[ -f ~/.zshrc.local ]] && . ~/.zshrc.local
 	export MY_RC="done"
 fi

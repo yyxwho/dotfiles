@@ -12,6 +12,11 @@ export MY_GO="$MY_DBASE/go"
 export MY_PWORK="$MY_DBASE/primary_work"
 export MY_PREPO="$MY_PWORK/repositories"
 
+if [ "$COLORTERM" = "gnome-terminal" ]; then
+    export TERM=xterm-256color
+    export COLORTERM=xterm-256color
+fi
+
 # most for  colorful man  
 # 	http://www.cyberciti.biz/faq/unix-linux-color-man-pages-configuration/
 # 	http://www.jedsoft.org/most/

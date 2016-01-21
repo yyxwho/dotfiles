@@ -38,11 +38,11 @@ set list
 "set listchars=tab:▸\ ,eol:¬,trail:·,nbsp:·
 set listchars=tab:▸\ ,trail:·,nbsp:·
 
-" Folder
-set foldmarker={,}
+" Fold {{{
+" set foldmarker={,}
 set foldlevel=0
 set foldmethod=marker
-
+"}}}
 
 " Make it obvious where 80 characters is
 set textwidth=80

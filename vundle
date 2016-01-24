@@ -10,7 +10,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " ident line
 Plugin 'Yggdroot/indentLine'
-" git 
+" git
 Plugin 'airblade/vim-gitgutter'
 Plugin 'fugitive.vim'
 Plugin 'gitv'
@@ -36,7 +36,7 @@ Plugin 'bling/vim-airline'
 " golang
 Plugin 'fatih/vim-go'
 
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
 
 call vundle#end() 
 
@@ -59,8 +59,11 @@ let g:go_highlight_build_constraints = 1
 
 "let g:syntastic_check_on_open = 1
 "let g:syntastic_check_on_wq = 0
-let g:syntastic_go_checkers = ['errcheck']
+"let g:syntastic_go_checkers = ['errcheck']
 "let g:syntastic_go_checkers = ['go', 'golint', 'errcheck']
+"let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+"let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+"let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 
 
 " auto open TagBar 
@@ -87,8 +90,5 @@ nmap <F3> :TagbarToggle<CR>
 let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
 
-" configure syntastic syntax checking to check on open as well as save
-let g:syntastic_check_on_open=1
-let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 
 " vim: filetype=vim

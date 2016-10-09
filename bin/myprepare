@@ -1,5 +1,26 @@
 #!/bin/bash
-chsh -s /bin/zsh
+echo -e "[zsh] update user defualt shell as zsh..."
+if [[ $SHELL =~ "zsh" ]]; then 
+    echo -e "\t ! do nothing, already done"
+else
+    chsh -s /bin/zsh
+    echo -e "\t ~ DONE"
+fi
+
+echo -e "[vim] update plugins..."
 vim +PluginInstall +qall
+echo -e "\t ~ DONE"
+
+echo -e "[rcm] update all rc file..."
 rm ~/.zshrc
 rcup
+echo -e "\t ~ DONE"
+
+echo "[mkdir] make all custom directories..."
+mkdir $MY_DBASE -p
+mkdir $MY_SRC -p
+mkdir $MY_REPO -p
+mkdir $MY_PREPO -p
+mkdir $MY_PROJ -p
+mkdir $MY_GO -p
+echo -e "\t ~ DONE"

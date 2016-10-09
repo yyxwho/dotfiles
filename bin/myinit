@@ -2,11 +2,9 @@
 sudo add-apt-repository ppa:martin-frost/thoughtbot-rcm
 sudo apt-get update
 sudo apt-get install rcm vim vim-nox-py2 git rcm zsh powerline python-powerline
-
 git config --global push.default simple
 git config --global user.name "oopsfoo"
 git config --global user.email "oopsfoo@gmail.com"
-
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 mkdir $MY_DBASE -p
@@ -15,4 +13,5 @@ mkdir $MY_REPO -p
 mkdir $MY_PROJ -p
 mkdir $MY_GO -p
 cd ~/.dotfiles && git update-index --assume-unchanged *.local
+rm ~/.zshrc
 rcup

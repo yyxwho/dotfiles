@@ -1,4 +1,5 @@
 #!/bin/bash
 chsh -s /bin/zsh
-rm ~/.zshrc
 vim +PluginInstall +qall
+rm ~/.zshrc
+rcup

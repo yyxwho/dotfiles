@@ -2,6 +2,7 @@
 sudo add-apt-repository ppa:martin-frost/thoughtbot-rcm
 sudo apt-get update
 sudo apt-get install rcm vim vim-nox-py2 git rcm zsh powerline python-powerline
+chsh -s /bin/zsh
 git config --global push.default simple
 git config --global user.name "oopsfoo"
 git config --global user.email "oopsfoo@gmail.com"

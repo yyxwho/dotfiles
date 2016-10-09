@@ -4,6 +4,7 @@ alias ls="ls --color=auto"
 alias grep="grep --color=auto"
 alias vimgo='vim -u ~/.vimrc.go'
 
+alias mydot="cd ~/.dotfiles"
 alias myalias="vim ~/.dotfiles/aliases"
 alias myenv="vim ~/.dotfiles/zshenv"
 alias myssh="vim ~/.ssh/config"

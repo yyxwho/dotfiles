@@ -2,6 +2,8 @@
 
 alias ls="ls --color=auto"
 alias grep="grep --color=auto"
+alias tmux="tmux attach || tmux -2" #Fix color for tmux
+
 alias vimgo='vim -u ~/.vimrc.go'
 
 alias mydot="cd ~/.dotfiles"

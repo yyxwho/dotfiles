@@ -3,7 +3,6 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 
 " ============== plugin list
-
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
@@ -41,9 +40,9 @@ Plugin 'fatih/vim-go'
 call vundle#end() 
 
 " ============== config for plugins
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+"python from powerline.vim import setup as powerline_setup
+"python powerline_setup()
+"python del powerline_setup
 
 set laststatus=2
 
@@ -94,6 +93,5 @@ nmap <F3> :TagbarToggle<CR>
 " gitgutter
 let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
-
 
 " vim: filetype=vim

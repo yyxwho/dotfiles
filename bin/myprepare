@@ -22,5 +22,6 @@ mkdir $MY_SRC -p
 mkdir $MY_REPO -p
 mkdir $MY_PREPO -p
 mkdir $MY_PROJ -p
+mkdir $MY_BOX -p
 mkdir $MY_GO -p
 echo -e "\t ~ DONE"

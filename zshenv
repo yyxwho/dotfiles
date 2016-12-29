@@ -6,6 +6,7 @@ export MY_DBASE="$HOME/Developer"
 export MY_SRC="$MY_DBASE/sources"
 export MY_REPO="$MY_DBASE/repositories"
 export MY_PROJ="$MY_DBASE/projects"
+export MY_BOX="$MY_DBASE/boxes"
 export MY_GO="$MY_DBASE/go"
 
 # my private work env

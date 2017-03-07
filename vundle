@@ -35,6 +35,8 @@ Plugin 'bling/vim-airline'
 " golang
 Plugin 'fatih/vim-go'
 
+Plugin 'pearofducks/ansible-vim'
+
 "Plugin 'scrooloose/syntastic'
 
 call vundle#end() 

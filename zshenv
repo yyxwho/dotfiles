@@ -40,13 +40,13 @@ if [ `uname` = "Darwin" ]; then
     export PATH=$PATH:$GOROOT/bin
 
 		# JAVA
-	export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home"
-	export PATH=$JAVA_HOME/bin:$PATH
-	export CLASSPATH=.:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib
+	#export JAVA_HOME="/Library/Java/Home"
+	#export PATH=$JAVA_HOME/bin:$PATH
+	#export CLASSPATH=.:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib
 
 	# GRADLE
-	export GRADLE_HOME="/usr/local/opt/gradle/libexec"
-	export PATH=$PATH:$GRADLE_HOME/bin
+	#export GRADLE_HOME="/usr/local/opt/gradle/libexec"
+	#export PATH=$PATH:$GRADLE_HOME/bin
 fi
 
 if [ `uname` = "Linux" ]; then

@@ -13,12 +13,17 @@ if [ -n $MY_RC ]; then
 	[[ -f ~/.aliases ]] && . ~/.aliases
 	[[ -f ~/.aliases.local ]] && . ~/.aliases.local
 	
-	# brew install autojump ...at first
 	if [ `uname` = "Darwin" ]; then
 		[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && source $(brew --prefix)/etc/profile.d/autojump.sh
         [[ -s $(brew --prefix autoenv)/activate.sh ]] && source $(brew --prefix autoenv)/activate.sh
 	fi
-	
+
+	if which pyenv-virtualenv-init > /dev/null; then
+        eval "$(pyenv init -)"
+        eval "$(pyenv virtualenv-init -)" 
+        #export PYENV_VIRTUALENV_DISABLE_PROMPT=0
+    fi
+
 	[[ -f ~/.zshrc.local ]] && . ~/.zshrc.local
 	export MY_RC="done"
 fi

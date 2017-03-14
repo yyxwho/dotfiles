@@ -15,7 +15,8 @@ if [ -n $MY_RC ]; then
 	
 	# brew install autojump ...at first
 	if [ `uname` = "Darwin" ]; then
-		[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+		[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && source $(brew --prefix)/etc/profile.d/autojump.sh
+        [[ -s $(brew --prefix autoenv)/activate.sh ]] && source $(brew --prefix autoenv)/activate.sh
 	fi
 	
 	[[ -f ~/.zshrc.local ]] && . ~/.zshrc.local

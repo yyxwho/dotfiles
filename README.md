@@ -1,32 +1,19 @@
 # dotfiles
 
-step 0:
----
+## step 0: install requirements
 
-### UBUNTU
-    
-    sudo apt-get install vim git zsh
-    chsh -s /bin/zsh
-    reboot
-    sudo add-apt-repository ppa:martin-frost/thoughtbot-rcm
-    sudo apt-get update
-    sudo apt-get install rcm
+run script afi_* base your OS
 
-step 1:
----
+## step 1: clone this
 
-    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-    sudo apt-get install python-pip
-    pip install --user powerline-status
-    vim +PluginInstall +qall
-    rcup
+``` shell
+git clone [thir_repo] ~/.dotfiles
+```
 
-step 2:
----
-    mkdir $MY_DBASE -p
-    mkdir $MY_SRC -p
-    mkdir $MY_REPO -p
-    mkdir $MY_PROJ -p
-    mkdir $MY_GO -p
-    git update-index --assume-unchanged *.local
+## step 2: run scripts 
+
+``` shell
+cd ~/.dotfiles/bin
+./myinit
+./myprepare
+```

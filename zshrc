@@ -18,12 +18,6 @@ if [ -n $MY_RC ]; then
         [[ -s $(brew --prefix autoenv)/activate.sh ]] && source $(brew --prefix autoenv)/activate.sh
 	fi
 
-	if which pyenv-virtualenv-init > /dev/null; then
-        eval "$(pyenv init -)"
-        eval "$(pyenv virtualenv-init -)" 
-        #export PYENV_VIRTUALENV_DISABLE_PROMPT=0
-    fi
-
 	[[ -f ~/.zshrc.local ]] && . ~/.zshrc.local
 	export MY_RC="done"
 fi

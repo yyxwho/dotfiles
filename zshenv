@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-export PATH="$HOME/.local/bin:$HOME/.bin:/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.bin:/usr/local/sbin:$PATH"
 
 # Some private directory
 export MY_DBASE="$HOME/Developer"

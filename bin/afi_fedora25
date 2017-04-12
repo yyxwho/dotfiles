@@ -1,0 +1,31 @@
+#!/bin/bash
+sudo dnf copr enable seeitcoming/rcm
+sudo dnf copr enable librehat/shadowsocks
+
+sudo rpm -ivh http://linuxdownload.adobe.com/adobe-release/adobe-release-i386-1.0-1.noarch.rpm
+sudo rpm -ivh http://linuxdownload.adobe.com/adobe-release/adobe-release-x86_64-1.0-1.noarch.rpm
+
+sudo dnf update
+
+# tools
+sudo dnf install git rcm wget curl vim
+
+# dev tools
+sudo dnf groupinstall 'Development Tools'
+sudo dnf groupinstall 'C Development Tools and Libraries'
+
+# gnome
+sudo dnf install gnome-tweak-tool dconf-editor d-feet
+
+# zsh
+sudo dnf install util-linux-user
+chsh -s /bin/zsh
+
+# build python
+sudo dnf install gcc zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel tk-devel
+
+# adobe flash
+sudo dnf install flash-plugin alsa-plugins-pulseaudio libcurl
+
+# pyenv
+curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash

@@ -34,5 +34,9 @@ sudo dnf install gcc zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-d
 # adobe flash
 sudo dnf install flash-plugin alsa-plugins-pulseaudio libcurl
 
+# php
+sudo dnf install php php-devel
+
 # pyenv
 curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
+

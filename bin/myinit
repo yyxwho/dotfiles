@@ -1,65 +1,4 @@
 #!/bin/bash
-
-function my_ubuntu_req_pkg {
-    echo -e "[OS] add rcm ppa..."
-    if [[ `ls /etc/apt/sources.list.d` =~ "martin-frost" ]]; then
-        echo -e "\t ! do nothing, already done"
-    else
-        sudo add-apt-repository ppa:martin-frost/thoughtbot-rcm && sudo apt-get update
-        echo -e "\t ~ DONE"
-    fi
-
-    echo -e "[OS] install deps by apt-get..."
-    if [ ! -f "/usr/bin/rcup" ]; then 
-        sudo apt-get install rcm vim vim-nox-py2 git rcm zsh powerline python-powerline
-        echo -e "\t ~ DONE"
-    else
-        echo -e "\t ! do nothing, already done"
-    fi
-
-    echo -e "[zsh] update user defualt shell as zsh..."
-    if [[ $SHELL =~ "zsh" ]]; then 
-        echo -e "\t ! do nothing, already done"
-    else
-        chsh -s /bin/zsh
-        echo -e "\t ~ DONE"
-    fi
-}
-
-function my_mac_req_pkg {
-    echo -e "[OS] start init my mac env..."
-    if [ ! -f "/usr/local/bin/brew" ]; then
-        echo -e "[OS] install homebrew..."
-        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    fi
-    brew doctor
-    brew update
-    if [ ! -f "/usr/local/bin/rcup" ]; then
-        echo -e "[OS] install rcm..."
-        brew tap thoughtbot/formulae
-        brew install rcm 
-    fi
-    if [ ! -f "/usr/local/bin/vim" ]; then
-        echo -e "[OS] install rcm..."
-    	brew install vim --with-luajit
-    fi
-    echo -e "[OS] install other pkgs..."
-    brew install doxygen coreutils ctags tmux tree zsh
-    echo -e "[zsh] update user defualt shell as zsh..."
-    if [[ $SHELL =~ "zsh" ]]; then 
-        echo -e "\t ! do nothing, already done"
-    else
-        sudo sh -c "echo /usr/local/bin/zsh >> /etc/shells"
-        chsh -s /usr/local/bin/zsh
-        echo -e "\t ~ DONE"
-    fi
-
-}
-
-if [[ `uname` = "Darwin" ]]; then
-	my_mac_req_pkg
-fi
-
 echo -e "[git] update git global config..."
 git config --global push.default simple
 git config --global user.name "oopsfoo"
@@ -83,6 +22,6 @@ cd ~/.dotfiles && git update-index --assume-unchanged *.local
 echo -e "\t ~ DONE"
 
 echo -e "[rcm] update all rc file..."
-rm ~/.zshrc
+#rm ~/.zshrc
 rcup
 echo -e "\t ~ DONE"

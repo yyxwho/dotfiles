@@ -1,0 +1,25 @@
+#!/bin/bash
+
+echo -e "[OS] add rcm ppa..."
+if [[ `ls /etc/apt/sources.list.d` =~ "martin-frost" ]]; then
+    echo -e "\t ! do nothing, already done"
+else
+    sudo add-apt-repository ppa:martin-frost/thoughtbot-rcm && sudo apt-get update
+    echo -e "\t ~ DONE"
+fi
+
+echo -e "[OS] install deps by apt-get..."
+if [ ! -f "/usr/bin/rcup" ]; then 
+    sudo apt-get install rcm vim vim-nox-py2 git rcm zsh powerline python-powerline
+    echo -e "\t ~ DONE"
+else
+    echo -e "\t ! do nothing, already done"
+fi
+
+echo -e "[zsh] update user defualt shell as zsh..."
+if [[ $SHELL =~ "zsh" ]]; then 
+    echo -e "\t ! do nothing, already done"
+else
+    chsh -s /bin/zsh
+    echo -e "\t ~ DONE"
+fi

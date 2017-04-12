@@ -1,18 +1,11 @@
-#!/bin/bash
-echo -e "[zsh] update user defualt shell as zsh..."
-if [[ $SHELL =~ "zsh" ]]; then 
-    echo -e "\t ! do nothing, already done"
-else
-    chsh -s /bin/zsh
-    echo -e "\t ~ DONE"
-fi
+#!/usr/bin/env zsh
+source ~/.zshrc
 
 echo -e "[vim] update plugins..."
 vim +PluginInstall +qall
 echo -e "\t ~ DONE"
 
 echo -e "[rcm] update all rc file..."
-rm ~/.zshrc
 rcup
 echo -e "\t ~ DONE"
 

@@ -1,6 +1,4 @@
 if [ -z $MY_RC ]; then
-    # local zshrc
-	[[ -f ~/.zshrc.local ]] && . ~/.zshrc.local
 
 	# load oh-my-zsh
 	[[ -f ~/.oh-my-zsh.rc ]] && . ~/.oh-my-zsh.rc
@@ -11,6 +9,9 @@ if [ -z $MY_RC ]; then
 		[[ -f ~/.zshenv ]] && . ~/.zshenv
 		[[ -f ~/.zshenv.local ]] && . ~/.zshenv.local
 	fi
+
+    # local zshrc
+	[[ -f ~/.zshrc.local ]] && . ~/.zshrc.local
 
 	# load aliases
 	[[ -f ~/.aliases ]] && . ~/.aliases

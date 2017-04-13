@@ -1,0 +1,2 @@
+#!/bin/bash
+PROXYCHAINS_SOCKS5=4321 proxychains4 $*

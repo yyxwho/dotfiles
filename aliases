@@ -4,7 +4,7 @@ alias ls="ls --color=auto"
 alias grep="grep --color=auto"
 alias tmux="tmux attach || tmux -2" #Fix color for tmux
 
-alias vimgo='vim -u ~/.vimrc.go'
+alias myvimup='vim +PluginInstall +qall'
 
 alias mydot="cd ~/.dotfiles"
 alias myalias="vim ~/.dotfiles/aliases"
@@ -23,9 +23,3 @@ alias unsetmyproxy="export HTTP_PROXY=\"\" && export HTTPS_PROXY=\"\""
 
 alias mpw="cd $MY_PWORK"
 alias mpr="cd $MY_PREPO"
-
-#alias centos6="ssh centos6"
-#alias centos7="ssh centos7"
-
-#alias go153="sudo rm /usr/local/go && sudo ln -s /usr/local/go_1.5.3 /usr/local/go && go version"
-#alias go162="sudo rm /usr/local/go && sudo ln -s /usr/local/go_1.6.2 /usr/local/go && go version"

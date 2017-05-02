@@ -28,12 +28,11 @@ fi
 [[ -f /usr/local/bin/vim ]]  && export EDITOR="/usr/local/bin/vim"
 
 if [ `uname` = "Darwin" ]; then
-	# GNU Toolkit
-	export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-	export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-    
+    # GNU Toolkit
+    export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+    export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
     # GO
-	export GOROOT="/usr/local/opt/go/libexec"
+    export GOROOT="/usr/local/opt/go/libexec"
     export PATH=$PATH:$GOROOT/bin
 fi
 

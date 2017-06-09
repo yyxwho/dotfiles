@@ -1,0 +1,24 @@
+#!/bin/bash
+
+sudo add-apt-repository -s -y ppa:hzwhuang/ss-qt5
+sudo add-apt-repository -s -y ppa:webupd8team/java
+sudo add-apt-repository -s -y ppa:martin-frost/thoughtbot-rcm
+sudo apt-get update
+
+sudo apt-get install -y rcm vim git zsh
+sudo apt-get install -y flashplugin-installer
+sudo apt-get install -y oracle-java8-set-default
+sudo apt-get install -y shadowsocks-qt5
+
+#sudo sh -c '. /etc/lsb-release && echo "deb http://mirrors.ustc.edu.cn/ros/ubuntu/ $DISTRIB_CODENAME main" > /etc/apt/sources.list.d/ros-latest.list'
+#sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
+#sudo apt-get install -y ros-indigo-desktop-full
+
+#sudo apt-get install -y cuda
+
+sudo apt-get -f install &&
+sudo apt-get autoremove &&
+#sudo apt-get -y autoclean &&
+#sudo apt-get -y clean
+
+#chsh -s /bin/zsh

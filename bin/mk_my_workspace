@@ -1,0 +1,30 @@
+#!/usr/bin/env zsh
+
+mk_my_ws() {
+    echo "[mkdir] make all custom directories..."
+    mkdir $MY_DBASE -p
+    mkdir $MY_SRC -p
+    mkdir $MY_REPO -p
+    mkdir $MY_PREPO -p
+    mkdir $MY_PROJ -p
+    mkdir $MY_BOX -p
+    mkdir $MY_GO -p
+    mkdir $MY_OPT -p
+    echo -e "\t ~ DONE"
+}
+
+if [ $MY_ENV ]; then
+    echo "my env is ready!"
+    mk_my_ws
+    return
+fi
+
+base_path="$(cd `dirname $0`; pwd)"
+file_path="`dirname $base_path`/zshenv"
+if [ ! -f $file_path ]; then
+    file_path="`dirname $base_path`/.zshenv"
+fi
+
+echo "execute my env setup script! $file_path"
+source $file_path
+mk_my_ws

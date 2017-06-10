@@ -16,9 +16,10 @@ alias myrepo="cd $MY_REPO"
 alias myproj="cd $MY_PROJ"
 alias mybox="cd $MY_BOX"
 alias mygo="cd $MY_GO"
+alias myopt="cd $MY_OPT"
 alias mygocur="export GOPATH=`pwd`:$GOPATH"
 
-alias setmyproxy="export HTTP_PROXY=\"http://127.0.0.1:8118\" HTTPS_PROXY=\"http://127.0.0.1:8118\""
+alias setmyproxy="export HTTP_PROXY=\"http://127.0.0.1:1082\" HTTPS_PROXY=\"http://127.0.0.1:1082\""
 alias unsetmyproxy="export HTTP_PROXY=\"\" && export HTTPS_PROXY=\"\""
 
 alias mpw="cd $MY_PWORK"

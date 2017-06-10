@@ -1,5 +1,9 @@
 #!/usr/bin/env zsh
-export PATH="$HOME/.local/bin:$HOME/.bin:/usr/local/sbin:$PATH"
+if [ ! -z $MY_ENV ]; then
+    return
+fi
+
+export PATH="$HOME/.local/bin:$HOME/.bin:$PATH"
 
 # Some private directory
 export MY_DBASE="$HOME/Developer"
@@ -8,6 +12,7 @@ export MY_REPO="$MY_DBASE/repositories"
 export MY_PROJ="$MY_DBASE/projects"
 export MY_BOX="$MY_DBASE/boxes"
 export MY_GO="$MY_DBASE/go"
+export MY_OPT="$MY_DBASE/opt"
 
 # my private work env
 export MY_PWORK="$MY_DBASE/primary_work"
@@ -34,11 +39,6 @@ if [ `uname` = "Darwin" ]; then
     # GO
     export GOROOT="/usr/local/opt/go/libexec"
     export PATH=$PATH:$GOROOT/bin
-fi
-
-if [ `uname` = "Linux" ]; then
-    # GO
-    [[ -f /usr/local/go/bin/go ]]  && export PATH=/usr/local/go/bin:$PATH
 fi
 
 export GOPATH="$MY_DBASE/go"

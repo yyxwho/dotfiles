@@ -6,7 +6,7 @@ vim +PluginInstall +qall
 echo -e "\t ~ DONE"
 
 echo -e "[rcm] update all rc file..."
-rcup
+rcup -i
 echo -e "\t ~ DONE"
 
 echo "[mkdir] make all custom directories..."
@@ -17,4 +17,5 @@ mkdir $MY_PREPO -p
 mkdir $MY_PROJ -p
 mkdir $MY_BOX -p
 mkdir $MY_GO -p
+mkdir $MY_OPT -p
 echo -e "\t ~ DONE"

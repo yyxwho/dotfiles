@@ -23,5 +23,5 @@ echo -e "\t ~ DONE"
 
 echo -e "[rcm] update all rc file..."
 #rm ~/.zshrc
-rcup
+rcup -i
 echo -e "\t ~ DONE"

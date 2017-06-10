@@ -6,17 +6,17 @@ fi
 export PATH="$HOME/.local/bin:$HOME/.bin:$PATH"
 
 # Some private directory
-export MY_DBASE="$HOME/Developer"
-export MY_SRC="$MY_DBASE/sources"
-export MY_REPO="$MY_DBASE/repositories"
-export MY_PROJ="$MY_DBASE/projects"
-export MY_BOX="$MY_DBASE/boxes"
-export MY_GO="$MY_DBASE/go"
-export MY_OPT="$MY_DBASE/opt"
+export MY_WS_DBASE="$HOME/Developer"
+export MY_WS_SRC="$MY_WS_DBASE/sources"
+export MY_WS_REPO="$MY_WS_DBASE/repositories"
+export MY_WS_PROJ="$MY_WS_DBASE/projects"
+export MY_WS_BOX="$MY_WS_DBASE/boxes"
+export MY_WS_GO="$MY_WS_DBASE/go"
+export MY_WS_OPT="$MY_WS_DBASE/opt"
 
 # my private work env
-export MY_PWORK="$MY_DBASE/primary_work"
-export MY_PREPO="$MY_PWORK/repositories"
+export MY_WS_PWORK="$MY_WS_DBASE/primary_work"
+export MY_WS_PREPO="$MY_WS_PWORK/repositories"
 
 if [ "$COLORTERM" = "gnome-terminal" ]; then
     export TERM=xterm-256color
@@ -41,7 +41,7 @@ if [ `uname` = "Darwin" ]; then
     export PATH=$PATH:$GOROOT/bin
 fi
 
-export GOPATH="$MY_DBASE/go"
+export GOPATH="$MY_WS_DBASE/go"
 export PATH=$PATH:$GOPATH/bin
 
 export MY_ENV="done"

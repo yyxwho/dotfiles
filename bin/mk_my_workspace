@@ -2,14 +2,16 @@
 
 mk_my_ws() {
     echo "[mkdir] make all custom directories..."
-    mkdir $MY_DBASE -p
-    mkdir $MY_SRC -p
-    mkdir $MY_REPO -p
-    mkdir $MY_PREPO -p
-    mkdir $MY_PROJ -p
-    mkdir $MY_BOX -p
-    mkdir $MY_GO -p
-    mkdir $MY_OPT -p
+    python2 -c '
+import os
+for k,v in os.environ.items():
+    if k.startswith("MY_WS_"):
+        if not os.path.exists(v):
+            os.makedirs(v)
+            print " [%s]: %s [created]"%(k,v)
+        else:
+            print " ![%s]: %s [exist]"%(k,v)
+'
     echo -e "\t ~ DONE"
 }
 

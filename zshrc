@@ -4,7 +4,6 @@ fi
 
 # load oh-my-zsh
 [[ -f ~/.oh-my-zsh.rc ]] && . ~/.oh-my-zsh.rc
-[[ -f ~/.oh-my-zsh.rc.local ]] && . ~/.oh-my-zsh.rc.local
 
 # load env
 [[ -f ~/.zshenv ]] && . ~/.zshenv

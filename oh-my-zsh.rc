@@ -1,4 +1,5 @@
 export ZSH=~/.oh-my-zsh
 ZSH_THEME="bira"
 plugins=(git)
+[[ -f ~/.oh-my-zsh.rc.local ]] && . ~/.oh-my-zsh.rc.local
 source $ZSH/oh-my-zsh.sh

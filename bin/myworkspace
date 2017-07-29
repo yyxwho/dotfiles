@@ -1,8 +1,8 @@
 #!/bin/bash
 echo -e "[git] update git global config..."
 git config --global push.default simple
-git config --global user.name "oopsfoo"
-git config --global user.email "oopsfoo@gmail.com"
+git config --global user.name "fleeyou"
+git config --global user.email "fleeyou@outlook.com"
 echo -e "\t ~ DONE"
 
 if [ ! -d "$HOME/.oh-my-zsh/.git" ]; then 

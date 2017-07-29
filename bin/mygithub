@@ -1,5 +1,5 @@
 #!/bin/bash
 echo -e "[git] update git config..."
-git config user.name "oopsfoo"
-git config user.email "oopsfoo@gmail.com"
+git config user.name "fleeyou"
+git config user.email "fleeyou@outlook.com"
 echo -e "\t ~ DONE"

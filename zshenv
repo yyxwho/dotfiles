@@ -6,7 +6,7 @@ fi
 export PATH="$HOME/.local/bin:$HOME/.bin:$PATH"
 
 # Some private directory
-export MY_WS_DBASE="$HOME/Developer"
+export MY_WS_DBASE="$HOME/workspace"
 export MY_WS_SRC="$MY_WS_DBASE/sources"
 export MY_WS_REPO="$MY_WS_DBASE/repositories"
 export MY_WS_PROJ="$MY_WS_DBASE/projects"
@@ -37,11 +37,11 @@ if [ `uname` = "Darwin" ]; then
     export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
     export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
     # GO
-    export GOROOT="/usr/local/opt/go/libexec"
+    export GOROOT="/usr/local/Cellar/go@1.7/1.7.6/libexec"
     export PATH=$PATH:$GOROOT/bin
 fi
 
 export GOPATH="$MY_WS_DBASE/go"
-export PATH=$PATH:$GOPATH/bin
-
+#export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:${GOPATH//://bin:}/bin
 export MY_ENV="done"

@@ -25,3 +25,7 @@ alias unsetmyproxy="export HTTP_PROXY=\"\" && export HTTPS_PROXY=\"\""
 
 alias mpw="cd $MY_WS_PWORK"
 alias mpr="cd $MY_WS_PREPO"
+
+alias lal='ls -al'
+alias lhl='ls -lh'
+alias clr='clear'

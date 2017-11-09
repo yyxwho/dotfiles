@@ -3,6 +3,8 @@ echo -e "[OS] start init my mac env..."
 if [ ! -f "/usr/local/bin/brew" ]; then
     echo -e "[OS] install homebrew..."
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    mkdir -p $HOME/.oh-my-zsh/custom/plugins/bd
+    curl https://raw.githubusercontent.com/Tarrasch/zsh-bd/master/bd.zsh > $HOME/.oh-my-zsh/custom/plugins/bd/bd.zsh
 fi
 brew doctor
 brew update
@@ -14,9 +16,10 @@ fi
 if [ ! -f "/usr/local/bin/vim" ]; then
     echo -e "[OS] install rcm..."
 	brew install vim --with-luajit
+    ~/.vim/colors
 fi
 echo -e "[OS] install other pkgs..."
-brew install doxygen coreutils ctags tmux tree zsh
+brew install doxygen coreutils ctags tmux tree zsh autojump
 echo -e "[zsh] update user defualt shell as zsh..."
 if [[ $SHELL =~ "zsh" ]]; then 
     echo -e "\t ! do nothing, already done"

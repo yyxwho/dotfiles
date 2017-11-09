@@ -1,7 +1,7 @@
 #!/bin/bash
 echo -e "[git] update git global config..."
 git config --global push.default simple
-git config --global user.name "fleeyou"
+git config --global user.name "xuyangyang"
 git config --global user.email "fleeyou@outlook.com"
 echo -e "\t ~ DONE"
 
@@ -21,7 +21,17 @@ echo -e "[dotfiles] disable local file push origins..."
 cd ~/.dotfiles && git update-index --assume-unchanged *.local
 echo -e "\t ~ DONE"
 
+source ~/.zshrc
+
+echo -e "[vim] update plugins..."
+vim +PluginInstall +qall
+echo -e "\t ~ DONE"
+
 echo -e "[rcm] update all rc file..."
 #rm ~/.zshrc
 rcup -i
 echo -e "\t ~ DONE"
+
+echo -e "generate vim color theme"
+cp ../molokai.vim $HOME/.vim/colors
+echo -e "\t ~ DONE" 

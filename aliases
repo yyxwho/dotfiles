@@ -29,3 +29,4 @@ alias mpr="cd $MY_WS_PREPO"
 alias lal='ls -al'
 alias lhl='ls -lh'
 alias clr='clear'
+alias vi='vim'

@@ -3,7 +3,7 @@ if [ ! -z $MY_ENV ]; then
     return
 fi
 
-export PATH="$HOME/.local/bin:$HOME/.bin:$PATH"
+#export PATH="$HOME/.local/bin:$HOME/.bin:$PATH"
 
 # Some private directory
 export MY_WS_DBASE="$HOME/workspace"
@@ -37,7 +37,7 @@ if [ `uname` = "Darwin" ]; then
     export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
     export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
     # GO
-    export GOROOT="/usr/local/Cellar/go@1.7/1.7.6/libexec"
+    export GOROOT="/usr/local/go/go1.9"
     export PATH=$PATH:$GOROOT/bin
 fi
 

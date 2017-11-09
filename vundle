@@ -37,7 +37,7 @@ Plugin 'fatih/vim-go'
 
 Plugin 'pearofducks/ansible-vim'
 
-"Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 
 call vundle#end() 
 

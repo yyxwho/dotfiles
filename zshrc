@@ -16,4 +16,10 @@ fi
 [[ -f ~/.aliases ]] && . ~/.aliases
 [[ -f ~/.aliases.local ]] && . ~/.aliases.local
 
+# autojump
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
+# zsh-bd
+. $HOME/.oh-my-zsh/custom/plugins/bd/bd.zsh
+
 export MY_RC="done"

@@ -1,5 +1,5 @@
 if filereadable($HOME . "/.vundle")
-      source ~/.vundle
+    source ~/.vundle
 endif
 
 " File Encoding
@@ -20,6 +20,7 @@ set showcmd                 " display incomplete commands
 set incsearch               " do incremental searching
 set laststatus=2            " Always display the status line
 set autowrite               " Automatically :write before running commands
+set autoindent
 
 filetype plugin indent on   " Automatically detect file types.
 syntax on                   " Syntax highlighting
@@ -56,7 +57,7 @@ set numberwidth=5
 set diffopt+=vertical
 
 if &compatible
-  set nocompatible
+    set nocompatible
 end
 
 set pastetoggle=<F12>
@@ -82,16 +83,82 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
 augroup vimrcEx
- autocmd!
-  " When editing a file, always jump to the last known ckrsor position.
-  " Don't do it for commit messages, when the position is invalid, or when
-  " inside an event handler (happens when dropping a file on gvim).
-  autocmd BufReadPost *
-    \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal g`\"" |
-    \ endif
+    autocmd!
+    " When editing a file, always jump to the last known ckrsor position.
+    " Don't do it for commit messages, when the position is invalid, or when
+    " inside an event handler (happens when dropping a file on gvim).
+    autocmd BufReadPost *
+                \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
+                \   exe "normal g`\"" |
+                \ endif
 
-  " Automatically wrap at 72 characters and spell check git commit messages
-  autocmd FileType gitcommit setlocal textwidth=72
-  autocmd FileType gitcommit setlocal spell
+    " Automatically wrap at 72 characters and spell check git commit messages
+    autocmd FileType gitcommit setlocal textwidth=72
+    autocmd FileType gitcommit setlocal spell
 augroup END
+
+" set mapleader
+let mapleader=","
+" vim-go custom mappings
+au FileType go nmap <Leader>s <Plug>(go-implements)
+au FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+au FileType go nmap <Leader>e <Plug>(go-rename)
+
+" vim-go settings
+let g:go_fmt_command = "goimports"
+
+" YCM settings
+let g:ycm_key_list_select_completion = ['<Down>', '<c-j>']
+let g:ycm_key_list_previous_completion = ['<Up>', '<c-k>']
+let g:ycm_key_invoke_completion = '<tab>'
+
+
+" UltiSnips setting
+let g:UltiSnipsExpandTrigger='<CR>'
+let g:UltiSnipsJumpForwardTrigger='<S-c-j>'
+let g:UltiSnipsJumpBackwardTrigger='<S-c-k>'
+let g:UltiSnipsEditSplit="vertical"
+
+" nerdcommenter setting
+map <F4> <leader>ci <CR>
+
+""""""""""""""""""""""
+"Quickly Run
+""""""""""""""""""""""
+map <F5> :call CompileRunGcc()<CR>
+func! CompileRunGcc()
+    exec "w"
+    if &filetype == 'c'
+        exec "!g++ % -o %<"
+        exec "!time ./%<"
+    elseif &filetype == 'cpp'
+        exec "!g++ % -o %<"
+        exec "!time ./%<"
+    elseif &filetype == 'java'
+        exec "!javac %"
+        exec "!time java %<"
+    elseif &filetype == 'sh'
+        :!time bash %
+    elseif &filetype == 'python'
+        exec "!time python3 %"
+    elseif &filetype == 'html'
+        exec "!firefox % &"
+    elseif &filetype == 'go'
+        "        exec "!go build %<"
+        exec "!time go run %"
+    elseif &filetype == 'mkd'
+        exec "!~/.vim/markdown.pl % > %.html &"
+        exec "!firefox %.html &"
+    endif
+endfunc
+
+" python setting

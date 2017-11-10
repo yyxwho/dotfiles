@@ -25,7 +25,12 @@ Plugin 'Tagbar'
 
 " Plugin 'Shougo/neocomplete'
 " Plugin 'SuperTab'
-" Plugin 'Auto-Pairs'
+Plugin 'Auto-Pairs'
+
+Plugin 'scrooloose/nerdcommenter'
+
+" python
+Plugin 'vim-scripts/indentpython.vim'
 
 " apparence&improvement
 Plugin 'fatih/molokai'
@@ -38,6 +43,12 @@ Plugin 'fatih/vim-go'
 Plugin 'pearofducks/ansible-vim'
 
 Plugin 'scrooloose/syntastic'
+
+Plugin 'Valloric/YouCompleteMe'
+
+Plugin 'SirVer/ultisnips'
+
+Plugin 'honza/vim-snippets'
 
 call vundle#end() 
 
@@ -91,6 +102,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 map <F2> :NERDTreeToggle<CR>
 " Tagbar shortcut
 nmap <F3> :TagbarToggle<CR>
+nmap tn :TagbarOpen fj<CR>
 
 " gitgutter
 let g:gitgutter_realtime = 0

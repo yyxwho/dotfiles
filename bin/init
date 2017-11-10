@@ -32,6 +32,3 @@ echo -e "[rcm] update all rc file..."
 rcup -i
 echo -e "\t ~ DONE"
 
-echo -e "generate vim color theme"
-cp ../molokai.vim $HOME/.vim/colors
-echo -e "\t ~ DONE" 

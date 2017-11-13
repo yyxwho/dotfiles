@@ -123,13 +123,19 @@ let g:ycm_key_invoke_completion = '<tab>'
 
 
 " UltiSnips setting
-let g:UltiSnipsExpandTrigger='<CR>'
+let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<S-c-j>'
 let g:UltiSnipsJumpBackwardTrigger='<S-c-k>'
 let g:UltiSnipsEditSplit="vertical"
 
 " nerdcommenter setting
 map <F4> <leader>ci <CR>
+
+" makrdown setting
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_folding_style_pythonic = 1
+let g:vim_markdown_override_foldtext = 0
+let g:vim_markdown_folding_level = 6
 
 """"""""""""""""""""""
 "Quickly Run

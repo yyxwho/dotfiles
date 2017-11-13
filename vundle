@@ -50,6 +50,12 @@ Plugin 'SirVer/ultisnips'
 
 Plugin 'honza/vim-snippets'
 
+" markdown
+Plugin 'godlygeek/tabular'
+Plugin 'suan/vim-instant-markdown'
+
+Plugin 'plasticboy/vim-markdown'
+
 call vundle#end() 
 
 " ============== config for plugins

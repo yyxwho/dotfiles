@@ -37,8 +37,11 @@ if [ `uname` = "Darwin" ]; then
     export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
     export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
     # GO
-    export GOROOT="/usr/local/go/go1.9"
+    export GOROOT="/usr/local/go/go1.9.2"
     export PATH=$PATH:$GOROOT/bin
+    export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home
+    export CLASSPAHT=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+    export PATH=$PATH:$JAVA_HOME/bin
 fi
 
 export GOPATH="$MY_WS_DBASE/go"
